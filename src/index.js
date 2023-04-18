@@ -1,14 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
 
 import App from "./components/app/App";
-import ErrorBoundry from "./components/error-boundry/error-boundry";
-import BookstoreService from "./services/bookstore-service";
-import { BookstoreServiceProvider } from "./bookstore-service-context/bookstore-service-context";
 
+//_________________ componentDidCatch()
+import ErrorBoundry from "./components/error-boundry/error-boundry";
+
+//__________________API
+import BookstoreService from "./services/bookstore-service";
+
+//_________________React.createContext()
+import { BookstoreServiceProvider } from "./components/bookstore-service-context/bookstore-service-context";
+
+//______________Redux
 import store from "./store";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 
 const bookstoreService = new BookstoreService();
 
